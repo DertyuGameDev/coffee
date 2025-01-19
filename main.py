@@ -20,12 +20,12 @@ class AddEditCoffeeForm(QDialog, Ui_AddEditCoffeeForm):
         self.cancelButton.clicked.connect(self.reject)
 
     def populate_fields(self):
-        self.nameLineEdit.setText(self.coffee_data.get('name', ''))
-        self.roastDegreeComboBox.setCurrentText(self.coffee_data.get('roast_level', 'Светлая'))
-        self.groundBeansComboBox.setCurrentText(self.coffee_data.get('ground_or_whole', 'Молотый'))
-        self.tasteDescriptionTextEdit.setPlainText(self.coffee_data.get('flavor_description', ''))
-        self.priceLineEdit.setText(str(self.coffee_data.get('price', '')))
-        self.packageSizeLineEdit.setText(self.coffee_data.get('package_volume', ''))
+        self.nameLineEdit.setText(self.coffeedata.get('name', ''))
+        self.roastDegreeComboBox.setCurrentText(self.coffeedata.get('roast_level', 'Светлая'))
+        self.groundBeansComboBox.setCurrentText(self.coffeedata.get('ground_or_whole', 'Молотый'))
+        self.tasteDescriptionTextEdit.setPlainText(self.coffeedata.get('flavor_description', ''))
+        self.priceLineEdit.setText(str(self.coffeedata.get('price', '')))
+        self.packageSizeLineEdit.setText(self.coffeedata.get('package_volume', ''))
 
     def save(self):
         name = self.nameLineEdit.text().strip()
@@ -55,7 +55,7 @@ class AddEditCoffeeForm(QDialog, Ui_AddEditCoffeeForm):
         }
 
         if self.is_edit:
-            self.result_data['id'] = self.coffee_data['id']
+            self.result_data['id'] = self.coffeedata['id']
 
         self.accept()
 
